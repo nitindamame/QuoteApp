@@ -40,96 +40,122 @@
 
             <div class="panel-heading">
                 <h3 class="panel-title"><?php echo lang('search_window'); ?></h3>
-				 <!--div class="btn-group">
+				 
+            </div>
+			<div class="panel-body">
+					<!--div class="btn-group">
 					  <button type="button" id="btnQuote" class="btn btn-primary" autocomplete="off" >Quote  </button>
 					  <button type="button" id="btnClient" class="btn btn-primary" autocomplete="off" >Client </button>
 					  <button type="button" id="btnProduct" class="btn btn-primary" autocomplete="off" >Product </button>
 					  <script>
 					  $('#btnQuote').on('click', function () {
 						var $btn = $(this).button('Quote')
-						
-						// business logic...
-						$btn.button('reset')
-					  })
-					  </script>
-				</div-->
-            </div>
-			<div class="panel-body">
-					
-
-				<ul class="nav nav-tabs">
-					<li class="active"><a href="#info-tab" data-toggle="tab">Information <i class="fa"></i></a></li>
-					<li><a href="#address-tab" data-toggle="tab">Address <i class="fa"></i></a></li>
-				</ul>
-
-				<form id="accountForm" method="post" class="form-horizontal">
-					<div class="tab-content">
-						<div class="tab-pane active" id="info-tab">
-							<div class="form-group">
+						<div class="form-group">
 								<label class="col-sm-3 control-label">Full name</label>
 								<div class="col-sm-5">
 									<input type="text" class="form-control" name="fullName" />
 								</div>
 							</div>
-							
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Company</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" name="company" />
+						// business logic...
+						$btn.button('reset')
+					  })
+					  </script>
+				</div-->
+				<div style=height:150px>
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#quote-tab" data-toggle="tab">Quote <i class="fa"></i></a></li>
+						<li><a href="#client-tab" data-toggle="tab">Client <i class="fa"></i></a></li>
+						<li><a href="#product-tab" data-toggle="tab">Product <i class="fa"></i></a></li>
+					</ul>
+					<div style=margin-top:5px>
+					<form id="searchForm" method="post" class="form-horizontal"> 
+						<div  class="tab-content">
+							<div  class="tab-pane active" id="quote-tab">
+								<div class="container">
+    <div class="col-sm-6" style="height:75px;">
+       <div class='col-md-5'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker9'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon"><span class="fa fa-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-5'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker10'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon"><span class="fa fa-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker9').datetimepicker();
+            $('#datetimepicker10').datetimepicker();
+            $("#datetimepicker9").on("dp.change",function (e) {
+               $('#datetimepicker10').data("DateTimePicker").setMinDate(e.date);
+            });
+            $("#datetimepicker10").on("dp.change",function (e) {
+               $('#datetimepicker9').data("DateTimePicker").setMaxDate(e.date);
+            });
+        });
+    </script>
+</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Company</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" name="company" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Job title</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" name="jobTitle" />
+									</div>
 								</div>
 							</div>
 							
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Job title</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" name="jobTitle" />
+							<div class="tab-pane" id="address-tab">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Address</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" name="address" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label">City</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" name="city" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Country</label>
+									<div class="col-sm-5">
+										<select class="form-control" name="country">
+											<option value="">Select a country</option>
+											<option value="FR">France</option>
+											<option value="DE">Germany</option>
+											<option value="IT">Italy</option>
+											<option value="JP">Japan</option>
+											<option value="RU">Russian</option>
+											<option value="US">United State</option>
+											<option value="GB">United Kingdom</option>
+											<option value="other">Other</option>
+										</select>
+									</div>
 								</div>
 							</div>
 						</div>
-						
-						<div class="tab-pane" id="address-tab">
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Address</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" name="address" />
-								</div>
-							</div>
-							
-							<div class="form-group">
-								<label class="col-sm-3 control-label">City</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control" name="city" />
-								</div>
-							</div>
-							
-							<div class="form-group">
-								<label class="col-sm-3 control-label">Country</label>
-								<div class="col-sm-5">
-									<select class="form-control" name="country">
-										<option value="">Select a country</option>
-										<option value="FR">France</option>
-										<option value="DE">Germany</option>
-										<option value="IT">Italy</option>
-										<option value="JP">Japan</option>
-										<option value="RU">Russian</option>
-										<option value="US">United State</option>
-										<option value="GB">United Kingdom</option>
-										<option value="other">Other</option>
-									</select>
-								</div>
-							</div>
 						</div>
-					</div>
-    
-					<div style="margin: 15px">
-						<div class="form-group">
-							<div class="col-sm-5 col-sm-offset-3">
-								<button type="submit" class="btn btn-default">Validate</button>
-							</div>
-						</div>
-					</div>
-				</form>
-
+					</form>
+				</div>
 
 			</div>
 		</div>   		
