@@ -14,8 +14,8 @@
 | path to your installation.
 |
 */
-/*$config['base_url']	= 'http://localhost/invoiceplane/';*/
-$config['base_url']	= 'http://192.168.1.7/invoiceplane/';
+$config['base_url']	= 'http://localhost/invoiceplane/';
+/*$config['base_url']	= 'http://192.168.1.7/invoiceplane/';*/
 
 /*
 |--------------------------------------------------------------------------
