@@ -41,11 +41,11 @@
 					 
 				</div>
 				<div class="panel-body">
-					<div style=height:150px>
+					<div style=height:240px>
 						<ul class="nav nav-tabs">
-							<li class="active"><a href="#quote-tab" data-toggle="tab">Quote <i class="fa"></i></a></li>
-							<li><a href="#client-tab" data-toggle="tab">Client <i class="fa"></i></a></li>
-							<li><a href="#product-tab" data-toggle="tab">Product <i class="fa"></i></a></li>
+							<li class="active"><a href="#quote-tab" id="quote_tab" data-toggle="tab">Quote <i class="fa"></i></a></li>
+							<li><a href="#client-tab" id="client_tab" data-toggle="tab">Client <i class="fa"></i></a></li>
+							<li><a href="#product-tab" id="product_tab" data-toggle="tab">Product <i class="fa"></i></a></li>
 						</ul>
 						<div style=margin-top:5px>
 						<form id="searchForm" method="post" class="form-horizontal"> 
@@ -100,7 +100,7 @@
 												
 											</div>
 											<div class='col-md-5'>
-												<div class="form-group">
+												<!--div class="form-group">
 													 <div class="dropdown">
 														<button class="btn btn-default dropdown-toggle" type="button" id="status" data-toggle="dropdown">Status
 														<span class="caret"></span></button>
@@ -111,13 +111,30 @@
 														  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Rejected</a></li>
 														</ul>
 													  </div>
+												</div-->
+												<div class="form-group">
+													<!--label class= "control-label">Status</label-->
+													
+														<select class="form-control" name="Status">
+															<option value="">Select quote status</option>
+															<option value="Op">Open</option>
+															<option value="Cl">Close</option>
+															<option value="St">Sent</option>
+															<option value="Rj">Rejected</option>
+														</select>
+													
 												</div>
-														
+													
 											</div>
-											<div class='col-md-6'>
-												<button class="btn btn-default " type="button" id="search">Search
-												<button class="btn btn-default " type="button" id="reset">Reset
+											<div class='col-md-4'>
+												<div class="form-group">
+													<button class="btn btn-default " type="button" id="search">Search</button>
+												</div>
 											</div>
+											<div class='col-md-3'>			
+												<button class="btn btn-default " type="button" id="reset">Reset</button>
+											</div>
+													
 											
 										</div>
 										<!--script type="text/javascript">
@@ -136,7 +153,7 @@
 									
 								</div>
 								
-								<div class="tab-pane" id="address-tab">
+								<div class="tab-pane" id="client-tab">
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Address</label>
 										<div class="col-sm-5">
